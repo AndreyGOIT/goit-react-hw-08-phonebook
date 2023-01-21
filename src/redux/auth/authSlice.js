@@ -1,0 +1,57 @@
+import { register, login, logout } from './auth-operations';
+import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+  user: { name: '', email: '' },
+  token: null,
+  isLoading: false,
+  error: null,
+};
+
+const authSlice = createSlice({
+  name: 'auth',
+  initialState,
+  extraReducers: {
+    [register.pending]: state => {
+      state.isLoading = true;
+    },
+    [register.fulfilled]: (state, { payload: { user, token } }) => {
+      state.isLoading = false;
+      state.error = null;
+      state.token = token;
+      state.user = user;
+    },
+    [register.rejected]: (state, { payload }) => {
+      state.isLoading = false;
+      state.error = payload;
+    },
+    [login.pending]: state => {
+      state.isLoading = true;
+    },
+    [login.fulfilled]: (state, { payload: { user, token } }) => {
+      state.isLoading = false;
+      state.error = null;
+      state.token = token;
+      state.user = user;
+    },
+    [login.rejected]: (state, { payload }) => {
+      state.isLoading = false;
+      state.error = payload;
+    },
+    [logout.pending]: state => {
+      state.isLoading = true;
+    },
+    [logout.fulfilled]: state => {
+      state.isLoading = false;
+      state.error = null;
+      state.token = null;
+      state.user = { name: '', email: '' };
+    },
+    [logout.rejected]: (state, { payload }) => {
+      state.isLoading = false;
+      state.error = payload;
+    },
+  },
+});
+
+export default authSlice.reducer;

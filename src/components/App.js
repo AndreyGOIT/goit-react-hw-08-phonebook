@@ -2,9 +2,12 @@ import { ContactsList } from './ContactsList/ContactsList';
 import Form from './Form/Form';
 import Filter from './Filter/Filter';
 
+import { RegisterForm } from './RegisterForm/RegisterForm';
+
 export default function App() {
   return (
     <>
+      <RegisterForm />
       <h1
         style={{
           margin: 15,
