@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { register } from 'redux/auth/auth-operations';
-import styles from './RegisterForm.module.css';
+import { login } from 'redux/auth/auth-operations';
+import styles from './LoginForm.module.css';
 
-export const RegisterForm = () => {
-  const [name, setName] = useState('');
+export const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -12,9 +11,6 @@ export const RegisterForm = () => {
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
-      case 'name':
-        setName(value);
-        break;
       case 'email':
         setEmail(value);
         break;
@@ -28,20 +24,15 @@ export const RegisterForm = () => {
 
   const handleSubmit = event => {
     event.preventDefaults();
-    dispatch(register({ name, email, password }));
-    setName('');
+    dispatch(login({ email, password }));
     setEmail('');
     setPassword('');
   };
 
   return (
     <section className={styles.section}>
-      <b>Register</b>
-      <form className={styles.regFormWindow} on Submit={handleSubmit}>
-        <label>
-          Name:<br></br>
-          <input type="text" name="name" value={name} onChange={handleChange} />
-        </label>
+      <b>Login</b>
+      <form className={styles.loginFormWindow} on Submit={handleSubmit}>
         <label>
           Email:<br></br>
           <input
@@ -60,7 +51,7 @@ export const RegisterForm = () => {
             onChange={handleChange}
           />
         </label>
-        <button>Register</button>
+        <button>Login</button>
       </form>
     </section>
   );

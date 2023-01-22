@@ -5,15 +5,15 @@ import {
   deleteContact,
   fetchContacts,
 } from 'redux/contacts/contacts-operations';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 export const ContactsList = () => {
   const contacts = useSelector(selectVisibleContacts);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  //   useEffect(() => {
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
 
   // console.log(contacts);
   return (
@@ -36,7 +36,14 @@ export const ContactsList = () => {
           })}
         </ol>
       ) : (
-        <p>There is no contacts yet</p>
+        <button
+          onClick={() => {
+            dispatch(fetchContacts());
+          }}
+        >
+          Show contacts
+        </button>
+        // <p>There is no contacts yet</p>
       )}
     </section>
   );

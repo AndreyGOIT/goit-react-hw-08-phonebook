@@ -1,0 +1,13 @@
+.section {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.loginFormWindow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 20px;
+  padding-left: 20px;
+  width: 400px;
+  border: 1px solid black;
+}

@@ -3,11 +3,15 @@ import Form from './Form/Form';
 import Filter from './Filter/Filter';
 
 import { RegisterForm } from './RegisterForm/RegisterForm';
+import { LoginForm } from './LoginForm/LoginForm';
+import { UserMenu } from './UserMenu/UserMenu';
 
 export default function App() {
   return (
     <>
+      <UserMenu />
       <RegisterForm />
+      <LoginForm />
       <h1
         style={{
           margin: 15,
