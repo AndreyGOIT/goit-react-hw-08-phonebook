@@ -32,14 +32,22 @@
 //     </>
 //   );
 // }
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router';
 import { HomePage } from 'pages/HomePage/HomePage';
 import { ContactsPage } from 'pages/ContactsPage/ContactsPage';
 import { LoginPage } from 'pages/LoginPage/LoginPage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 import { Layout } from './Layout/Layout';
+import { fetchCurretUser } from 'redux/auth/auth-operations';
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCurretUser());
+  }, [dispatch]);
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
