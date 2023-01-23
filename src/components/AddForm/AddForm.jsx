@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addUser } from 'redux/users/users-operations';
+import { addContact } from 'redux/contacts/contacts-operations';
 
 export const Form = ({ closeForm }) => {
   const dispatch = useDispatch();
@@ -7,7 +7,7 @@ export const Form = ({ closeForm }) => {
   const handleSubmit = event => {
     event.preventDefault();
     dispatch(
-      addUser({
+      addContact({
         name: event.target.element.name.value,
         email: event.target.element.email.value,
       })

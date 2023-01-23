@@ -3,7 +3,7 @@ import styles from './Filter.module.css';
 import { useDispatch } from 'react-redux';
 import { filterContacts } from 'redux/contacts/contactsSlice';
 
-const Filter = () => {
+export const Filter = () => {
   const dispatch = useDispatch();
 
   return (
@@ -16,4 +16,3 @@ const Filter = () => {
     </label>
   );
 };
-export default Filter;
