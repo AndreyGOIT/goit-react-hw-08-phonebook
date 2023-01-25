@@ -10,7 +10,7 @@ export const RegisterForm = () => {
 
   const dispatch = useDispatch();
 
-  const handleChange = ({ target: { name, value } }) => {
+  const handleChange = ({ target: { name, value, password } }) => {
     switch (name) {
       case 'name':
         setName(value);
@@ -37,7 +37,7 @@ export const RegisterForm = () => {
   return (
     <section className={styles.section}>
       <b>Register</b>
-      <form className={styles.regFormWindow} on Submit={handleSubmit}>
+      <form className={styles.regFormWindow} onSubmit={handleSubmit}>
         <label>
           Name:<br></br>
           <input type="text" name="name" value={name} onChange={handleChange} />

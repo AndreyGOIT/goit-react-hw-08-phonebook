@@ -48,7 +48,7 @@ export const App = () => {
               }
             />
             <Route
-              peth="login"
+              path="login"
               element={
                 <PublicRoute restricted>
                   <LoginPage />
