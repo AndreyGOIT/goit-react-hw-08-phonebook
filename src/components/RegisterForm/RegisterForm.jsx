@@ -10,7 +10,7 @@ export const RegisterForm = () => {
 
   const dispatch = useDispatch();
 
-  const handleChange = ({ target: { name, value, password } }) => {
+  const handleChange = ({ target: { name, value } }) => {
     switch (name) {
       case 'name':
         setName(value);

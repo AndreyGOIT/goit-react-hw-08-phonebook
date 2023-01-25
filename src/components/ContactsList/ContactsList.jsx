@@ -6,6 +6,7 @@ import {
   fetchContacts,
 } from 'redux/contacts/contacts-operations';
 // import { useEffect } from 'react';
+import { DeleteIcon } from '@chakra-ui/icons';
 
 export const ContactsList = () => {
   const contacts = useSelector(selectVisibleContacts);
@@ -30,6 +31,7 @@ export const ContactsList = () => {
                   }}
                 >
                   Delete
+                  <DeleteIcon />
                 </button>
               </li>
             );

@@ -32,7 +32,7 @@ export const LoginForm = () => {
   return (
     <section className={styles.section}>
       <b>Login</b>
-      <form className={styles.loginFormWindow} on Submit={handleSubmit}>
+      <form className={styles.loginFormWindow} onSubmit={handleSubmit}>
         <label>
           Email:<br></br>
           <input
