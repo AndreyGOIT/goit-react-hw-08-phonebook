@@ -1,39 +1,5 @@
-// import { ContactsList } from './ContactsList/ContactsList';
-// import Form from './Form/Form';
-// import Filter from './Filter/Filter';
-
-// import { RegisterForm } from './RegisterForm/RegisterForm';
-// import { LoginForm } from './LoginForm/LoginForm';
-// import { UserMenu } from './UserMenu/UserMenu';
-
-// export default function App() {
-//   return (
-//     <>
-//       <UserMenu />
-//       <RegisterForm />
-//       <LoginForm />
-//       <h1
-//         style={{
-//           margin: 15,
-//         }}
-//       >
-//         Phonebook
-//       </h1>
-//       <Form />
-//       <h2
-//         style={{
-//           margin: 15,
-//         }}
-//       >
-//         Contacts
-//       </h2>
-//       <Filter />
-//       <ContactsList />
-//     </>
-//   );
-// }
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router';
 import { HomePage } from 'pages/HomePage/HomePage';
 import { ContactsPage } from 'pages/ContactsPage/ContactsPage';
@@ -41,21 +7,57 @@ import { LoginPage } from 'pages/LoginPage/LoginPage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 import { Layout } from './Layout/Layout';
 import { fetchCurretUser } from 'redux/auth/auth-operations';
+import { PrivateRoute } from 'HOCs/PrivateRoute';
+import { PublicRoute } from 'HOCs/PublicRoute';
+import { selectIsFetchingCurrentUser } from 'redux/auth/auth-selectors';
 
 export const App = () => {
   const dispatch = useDispatch();
+  const isFetchingCurrentUser = useSelector(selectIsFetchingCurrentUser);
 
   useEffect(() => {
     dispatch(fetchCurretUser());
   }, [dispatch]);
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={HomePage} />
-        <Route path="contacts" element={ContactsPage} />
-        <Route path="register" element={RegisterPage} />
-        <Route peth="login" element={LoginPage} />
-      </Route>
-    </Routes>
+    <>
+      {!isFetchingCurrentUser && (
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route
+              index
+              element={
+                <PublicRoute>
+                  <HomePage />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="contacts"
+              element={
+                <PrivateRoute>
+                  <ContactsPage />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="register"
+              element={
+                <PublicRoute restricted>
+                  <RegisterPage />
+                </PublicRoute>
+              }
+            />
+            <Route
+              peth="login"
+              element={
+                <PublicRoute restricted>
+                  <LoginPage />
+                </PublicRoute>
+              }
+            />
+          </Route>
+        </Routes>
+      )}
+    </>
   );
 };
