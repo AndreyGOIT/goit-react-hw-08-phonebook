@@ -3,7 +3,7 @@ import styles from './AuthNavigation.module.css';
 
 export const AuthNavigation = () => {
   return (
-    <nav>
+    <nav className={styles.nav}>
       <ul>
         <li>
           <Link to="register">Register</Link>
