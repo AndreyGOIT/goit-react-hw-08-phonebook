@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import styles from './AuthNavigation.module.css';
 
 export const AuthNavigation = () => {
   return (

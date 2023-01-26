@@ -8,7 +8,7 @@ export const Navigation = () => {
   return (
     // import { Link } from "@reach/router"
 
-    <Breadcrumb bg="lightblue" p="2" fontWeight="medium" fontSize="l">
+    <Breadcrumb p="2" fontWeight="medium" fontSize="l">
       <BreadcrumbItem>
         <BreadcrumbLink as={Link} to="/">
           Home
