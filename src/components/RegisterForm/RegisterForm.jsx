@@ -2,6 +2,7 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  InputRightElement,
   Stack,
   FormControl,
   FormLabel,
@@ -18,6 +19,7 @@ export const RegisterForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [show, setShow] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -45,8 +47,10 @@ export const RegisterForm = () => {
     setPassword('');
   };
 
+  const handleClick = () => setShow(!show);
+
   return (
-    <Box p={5} maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+    <Box p={5} maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
       <FormControl board={1} w="100%" onSubmit={handleSubmit}>
         <FormLabel>REGISTER FORM</FormLabel>
         <Stack spacing={2}>
@@ -78,18 +82,26 @@ export const RegisterForm = () => {
           </InputGroup>
           <FormLabel>Password:</FormLabel>
           <InputGroup>
-            <InputLeftElement
+            {/* <InputLeftElement
               pointerEvents="none"
               children={<EditIcon color="gray.300" />}
-            />
+            /> */}
             <Input
-              type="password"
+              // type="password"
+              pr="4.5rem"
+              type={show ? 'text' : 'password'}
+              placeholder="Enter password"
               name="password"
               value={password}
               onChange={handleChange}
             />
+            <InputRightElement width="4.5rem">
+              <Button h="1.75rem" size="sm" onClick={handleClick}>
+                {show ? 'Hide' : 'Show'}
+              </Button>
+            </InputRightElement>
           </InputGroup>
-          <Button w={60}>Register</Button>
+          <Button w="90px">Register</Button>
         </Stack>
       </FormControl>
     </Box>
