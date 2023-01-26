@@ -39,51 +39,54 @@
 //   );
 // }
 
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Button } from 'components/Button/Button';
+// import { useState } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { Button } from 'components/Button/Button';
 import { ContactsList } from 'components/ContactsList/ContactsList';
 import { Form } from 'components/AddForm/AddForm';
 import { Filter } from 'components/Filter/Filter';
-import { fetchContacts } from 'redux/contacts/contacts-operations';
-import {
-  selectIsLoading,
-  selectError,
-} from 'redux/contacts/contacts-selectors';
+// import { fetchContacts } from 'redux/contacts/contacts-operations';
+// import {
+//   selectIsLoading,
+//   selectError,
+// } from 'redux/contacts/contacts-selectors';
 
 export const ContactsPage = () => {
-  const [isListShown, setIsListShown] = useState(false);
-  const [isFormShown, setIsFormShown] = useState(false);
-  const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
+  // const [isListShown, setIsListShown] = useState(false);
+  // const [isFormShown, setIsFormShown] = useState(false);
+  // const dispatch = useDispatch();
+  // const isLoading = useSelector(selectIsLoading);
+  // const error = useSelector(selectError);
 
-  const showContactsList = () => {
-    setIsListShown(true);
-    dispatch(fetchContacts());
-  };
-  const showForm = () => {
-    setIsFormShown(true);
-  };
-  const closeForm = () => {
-    setIsFormShown(false);
-  };
-
+  // const showContactsList = () => {
+  //   setIsListShown(true);
+  //   dispatch(fetchContacts());
+  // };
+  // const showForm = () => {
+  //   setIsFormShown(true);
+  // };
+  // const closeForm = () => {
+  //   setIsFormShown(false);
+  // };
   return (
     <>
-      {isListShown ? (
+      <Form />
+      <Filter />
+      <ContactsList />
+      {/* {isListShown ? (
         <>
           <Filter />
-          <ContactsList />
-          {!isFormShown && !isLoading && !error && (
+          <ContactsList /> */}
+      {/* {!isFormShown && !isLoading && !error && (
             <Button text="Add contact" clickHandler={showForm} />
-          )}
-          {isFormShown && <Form closeForm={closeForm} />}
+          )} */}
+      {/* {isFormShown && <Form closeForm={closeForm} />} */}
+      {/* <Form closeForm={closeForm} />
         </>
       ) : (
         <Button text="Show contacts" clickHandler={showContactsList} />
       )}
-      {error && <p>{error.message}</p>}
+      {error && <p>{error.message}</p>} */}
     </>
   );
 };

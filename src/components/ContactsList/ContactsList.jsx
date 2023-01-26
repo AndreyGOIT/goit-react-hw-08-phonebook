@@ -38,14 +38,16 @@ export const ContactsList = () => {
           })}
         </ol>
       ) : (
-        <button
-          onClick={() => {
-            dispatch(fetchContacts());
-          }}
-        >
-          Show contacts
-        </button>
-        // <p>There is no contacts yet</p>
+        <>
+          <button
+            onClick={() => {
+              dispatch(fetchContacts());
+            }}
+          >
+            Show contacts
+          </button>
+          <p>There is no contacts yet</p>
+        </>
       )}
     </section>
   );

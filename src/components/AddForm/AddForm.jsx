@@ -1,5 +1,13 @@
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/contacts-operations';
+// import {
+//   FormControl,
+//   FormLabel,
+//   Input,
+//   FormHelperText,
+// } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
+import { Input } from '@chakra-ui/react';
 
 export const Form = ({ closeForm }) => {
   const dispatch = useDispatch();
@@ -16,16 +24,40 @@ export const Form = ({ closeForm }) => {
   };
 
   return (
+    // <FormControl on onSubmit={handleSubmit}>
+    //   <FormLabel>Name</FormLabel>
+    //   <Input type="text" name="name" placeholder="Enter your name" w="auto" />
+    //   <FormLabel>Email address</FormLabel>
+
+    //   <Input
+    //     type="email"
+    //     name="email"
+    //     placeholder="Enter your email"
+    //     w="auto"
+    //   />
+    //   <FormHelperText>We'll never share your email.</FormHelperText>
+    //   <Button>Save</Button>
+    // </FormControl>
+
     <form on onSubmit={handleSubmit}>
       <label>
         Name:
-        <input type="text" name="name" />
+        <br />
+        <Input type="text" name="name" placeholder="Enter your name" w="auto" />
       </label>
+      {/* <br /> */}
+
       <label>
         Email:
-        <input type="email" name="email" />
+        <br />
+        <Input
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          w="auto"
+        />
       </label>
-      <button>Save</button>
+      <Button>Save</Button>
     </form>
   );
 };
