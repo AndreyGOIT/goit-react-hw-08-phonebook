@@ -10,7 +10,7 @@ export const UserMenu = () => {
     <Box
       display="flex"
       alignItems="center"
-      justifyContent="center"
+      justifyContent="flex-end"
       width="100%"
       py={12}
       // bg="lightblue"
@@ -18,9 +18,8 @@ export const UserMenu = () => {
       p={4}
       color="black"
     >
-      This is the Box
-      <p>{`Welcome ${name}`}</p>
-      <Button colorScheme="gray" onClick={() => dispatch(logout())}>
+      <b>{`Welcome, ${name}`}</b>
+      <Button ml={10} colorScheme="gray" onClick={() => dispatch(logout())}>
         Logout
       </Button>
     </Box>

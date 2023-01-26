@@ -1,5 +1,5 @@
 import { register, login, logout, fetchCurretUser } from './auth-operations';
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 
 const initialState = {
   user: { name: '', email: '' },
@@ -14,60 +14,63 @@ const authSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
-      .addCase(register.pending, state => {
-        state.isLoading = true;
-      })
       .addCase(register.fulfilled, (state, { payload: { user, token } }) => {
-        state.isLoading = false;
-        state.error = null;
         state.token = token;
         state.user = user;
-      })
-      .addCase(register.rejected, (state, { payload }) => {
-        state.isLoading = false;
-        state.error = payload;
-      })
-      .addCase(login.pending, state => {
-        state.isLoading = true;
       })
       .addCase(login.fulfilled, (state, { payload: { user, token } }) => {
-        state.isLoading = false;
-        state.error = null;
         state.token = token;
         state.user = user;
       })
-      .addCase(login.rejected, (state, { payload }) => {
-        state.isLoading = false;
-        state.error = payload;
-      })
-      .addCase(logout.pending, state => {
-        state.isLoading = true;
-      })
       .addCase(logout.fulfilled, state => {
-        state.isLoading = false;
-        state.error = null;
         state.token = null;
         state.user = { name: '', email: '' };
       })
-      .addCase(logout.rejected, (state, { payload }) => {
-        state.isLoading = false;
-        state.error = payload;
-      })
       .addCase(fetchCurretUser.pending, state => {
-        state.isLoading = true;
         state.isFetchingCurrentUser = true;
       })
       .addCase(fetchCurretUser.fulfilled, (state, { payload }) => {
-        state.isLoading = false;
-        state.error = null;
         state.user = payload;
         state.isFetchingCurrentUser = false;
       })
       .addCase(fetchCurretUser.rejected, (state, { payload }) => {
-        state.isLoading = false;
-        state.error = payload;
         state.isFetchingCurrentUser = false;
-      });
+      })
+      .addMatcher(
+        isAnyOf(
+          register.pending,
+          login.pending,
+          logout.pending,
+          fetchCurretUser.pending
+        ),
+        state => {
+          state.isLoading = true;
+        }
+      )
+      .addMatcher(
+        isAnyOf(
+          register.fulfilled,
+          login.fulfilled,
+          logout.fulfilled,
+          fetchCurretUser.fulfilled
+        ),
+        state => {
+          state.isLoading = false;
+          state.error = null;
+        }
+      )
+      .addMatcher(
+        isAnyOf(
+          register.rejected,
+          login.rejected,
+          logout.rejected,
+          fetchCurretUser.rejected
+        ),
+        (state, { payload }) => {
+          state.isLoading = false;
+          state.error = payload;
+        }
+      );
   },
 });
 
