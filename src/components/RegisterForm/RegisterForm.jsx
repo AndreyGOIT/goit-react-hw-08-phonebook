@@ -130,7 +130,7 @@ export const RegisterForm = () => {
             onChange={handleChange}
           />
         </label>
-        <button>Register</button>
+        <button type="submit">Register</button>
       </form>
     </section>
   );
