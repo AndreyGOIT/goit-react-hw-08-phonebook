@@ -40,7 +40,7 @@ export const RegisterForm = () => {
   };
 
   const handleSubmit = event => {
-    event.preventDefault();
+    event.preventDefaults();
     dispatch(register({ name, email, password }));
     setName('');
     setEmail('');
