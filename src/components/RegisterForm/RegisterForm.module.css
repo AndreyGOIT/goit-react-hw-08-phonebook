@@ -1,13 +1,38 @@
 .section {
-  padding-top: 20px;
-  padding-left: 20px;
+  padding: 20px;
+  /* padding-left: 20px; */
 }
 .regFormWindow {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 20px;
-  padding-left: 20px;
-  width: 400px;
+  padding: 20px;
+  width: 300px;
   border: 1px solid black;
+}
+input {
+  width: 250px;
+  border: 2px solid gray;
+  border-radius: 4px;
+}
+input:focus {
+  border: 2px solid rgb(4, 16, 245);
+}
+input:hover {
+  border: 2px solid rgb(4, 16, 245);
+}
+button[type='submit'] {
+  border: 2px solid gray;
+  border-radius: 4px;
+  background-color: lightgray;
+  color: rgb(55, 51, 51);
+  padding: 1px 8px;
+}
+button:hover {
+  background-color: rgb(103, 98, 98);
+  color: white;
+}
+.title {
+  font-weight: bold;
+  margin-bottom: 5px;
 }

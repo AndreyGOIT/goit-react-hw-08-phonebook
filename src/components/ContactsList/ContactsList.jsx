@@ -5,7 +5,7 @@ import {
   deleteContact,
   fetchContacts,
 } from 'redux/contacts/contacts-operations';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { DeleteIcon } from '@chakra-ui/icons';
 import { Button } from '@chakra-ui/react';
 
@@ -13,9 +13,9 @@ export const ContactsList = () => {
   const contacts = useSelector(selectVisibleContacts);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
 
   console.log(contacts);
   return (

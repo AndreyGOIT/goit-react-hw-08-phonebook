@@ -21,7 +21,7 @@ export default function Form() {
   };
 
   const handleSubmit = event => {
-    event.preventDefaults();
+    event.preventDefault();
     console.log(name, number);
 
     dispatch(addContact({ name, number }));

@@ -36,7 +36,7 @@ export const LoginForm = () => {
   };
 
   const handleSubmit = event => {
-    event.preventDefaults();
+    event.preventDefault();
     dispatch(login({ email, password }));
     setEmail('');
     setPassword('');

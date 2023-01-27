@@ -40,7 +40,7 @@ export const Form = ({ closeForm }) => {
         w="auto"
       />
       <FormHelperText>We'll never share your email.</FormHelperText>
-      <Button>Save</Button>
+      <Button type="submit">Save</Button>
     </FormControl>
 
     // <form on onSubmit={handleSubmit}>

@@ -39,7 +39,7 @@ export const RegisterForm = () => {
   };
 
   const handleSubmit = event => {
-    event.preventDefaults();
+    event.preventDefault();
     dispatch(register({ name, email, password }));
     setName('');
     setEmail('');
@@ -106,7 +106,7 @@ export const RegisterForm = () => {
     // </Box>
 
     <section className={styles.section}>
-      <b>Register</b>
+      <h2 className={styles.title}>Register form</h2>
       <form className={styles.regFormWindow} onSubmit={handleSubmit}>
         <label>
           Name:<br></br>
@@ -130,6 +130,7 @@ export const RegisterForm = () => {
             onChange={handleChange}
           />
         </label>
+        <br></br>
         <button type="submit">Register</button>
       </form>
     </section>
