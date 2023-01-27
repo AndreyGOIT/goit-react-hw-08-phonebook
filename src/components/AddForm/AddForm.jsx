@@ -13,7 +13,7 @@ export const Form = ({ closeForm }) => {
   const dispatch = useDispatch();
 
   const handleSubmit = event => {
-    event.preventDefault();
+    event.preventDefaults();
     dispatch(
       addContact({
         name: event.target.element.name.value,

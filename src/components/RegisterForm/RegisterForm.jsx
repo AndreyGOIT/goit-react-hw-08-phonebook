@@ -4,7 +4,6 @@ import {
   InputLeftElement,
   InputRightElement,
   Stack,
-  FormControl,
   FormLabel,
   Button,
   Box,
@@ -51,7 +50,7 @@ export const RegisterForm = () => {
 
   return (
     <Box p={5} maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
-      <FormControl board={1} w="100%" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <FormLabel>REGISTER FORM</FormLabel>
         <Stack spacing={2}>
           <FormLabel>Name:</FormLabel>
@@ -103,7 +102,7 @@ export const RegisterForm = () => {
           </InputGroup>
           <Button w="90px">Register</Button>
         </Stack>
-      </FormControl>
+      </form>
     </Box>
 
     // <section className={styles.section}>
