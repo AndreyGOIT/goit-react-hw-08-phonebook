@@ -23,7 +23,7 @@ export const addContact = createAsyncThunk(
   async (contact, { rejectWithValue }) => {
     try {
       const { data } = await axios.post(
-        'https://connections-api.herokuapp.com/contacts',
+        `https://connections-api.herokuapp.com/contacts`,
         contact
       );
       return data;
