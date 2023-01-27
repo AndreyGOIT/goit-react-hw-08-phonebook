@@ -1,24 +1,25 @@
-// import {
-//   Input,
-//   InputGroup,
-//   InputLeftElement,
-//   InputRightElement,
-//   Stack,
-//   FormLabel,
-//   Button,
-//   Box,
-// } from '@chakra-ui/react';
-// import { EditIcon, AtSignIcon } from '@chakra-ui/icons';
+import {
+  Input,
+  InputGroup,
+  InputLeftElement,
+  InputRightElement,
+  Stack,
+  FormLabel,
+  FormControl,
+  Button,
+  Box,
+} from '@chakra-ui/react';
+import { EditIcon, AtSignIcon } from '@chakra-ui/icons';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/auth-operations';
-import styles from './RegisterForm.module.css';
+// import styles from './RegisterForm.module.css';
 
 export const RegisterForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -46,93 +47,97 @@ export const RegisterForm = () => {
     setPassword('');
   };
 
-  // const handleClick = () => setShow(!show);
+  const handleClick = () => setShow(!show);
 
   return (
-    // <Box p={5} maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
-    //   <form onSubmit={handleSubmit}>
-    //     <FormLabel>REGISTER FORM</FormLabel>
-    //     <Stack spacing={2}>
-    //       <FormLabel>Name:</FormLabel>
-    //       <InputGroup>
-    //         <InputLeftElement
-    //           pointerEvents="none"
-    //           children={<EditIcon color="gray.300" />}
-    //         />
-    //         <Input
-    //           type="text"
-    //           name="name"
-    //           value={name}
-    //           onChange={handleChange}
-    //         />
-    //       </InputGroup>
-    //       <FormLabel>Email:</FormLabel>
-    //       <InputGroup>
-    //         <InputLeftElement
-    //           pointerEvents="none"
-    //           children={<AtSignIcon color="gray.300" />}
-    //         />
-    //         <Input
-    //           type="email"
-    //           name="email"
-    //           value={email}
-    //           onChange={handleChange}
-    //         />
-    //       </InputGroup>
-    //       <FormLabel>Password:</FormLabel>
-    //       <InputGroup>
-    //         {/* <InputLeftElement
-    //           pointerEvents="none"
-    //           children={<EditIcon color="gray.300" />}
-    //         /> */}
-    //         <Input
-    //           // type="password"
-    //           pr="4.5rem"
-    //           type={show ? 'text' : 'password'}
-    //           placeholder="Enter password"
-    //           name="password"
-    //           value={password}
-    //           onChange={handleChange}
-    //         />
-    //         <InputRightElement width="4.5rem">
-    //           <Button h="1.75rem" size="sm" onClick={handleClick}>
-    //             {show ? 'Hide' : 'Show'}
-    //           </Button>
-    //         </InputRightElement>
-    //       </InputGroup>
-    //       <Button w="90px">Register</Button>
-    //     </Stack>
-    //   </form>
-    // </Box>
+    <Box p={5} maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
+      <FormControl board={1} w="100%">
+        <form onSubmit={handleSubmit}>
+          <FormLabel>REGISTER FORM</FormLabel>
+          <Stack spacing={2}>
+            <FormLabel>Name:</FormLabel>
+            <InputGroup>
+              <InputLeftElement
+                pointerEvents="none"
+                children={<EditIcon color="gray.300" />}
+              />
+              <Input
+                type="text"
+                name="name"
+                value={name}
+                onChange={handleChange}
+              />
+            </InputGroup>
+            <FormLabel>Email:</FormLabel>
+            <InputGroup>
+              <InputLeftElement
+                pointerEvents="none"
+                children={<AtSignIcon color="gray.300" />}
+              />
+              <Input
+                type="email"
+                name="email"
+                value={email}
+                onChange={handleChange}
+              />
+            </InputGroup>
+            <FormLabel>Password:</FormLabel>
+            <InputGroup>
+              {/* <InputLeftElement
+              pointerEvents="none"
+              children={<EditIcon color="gray.300" />}
+            /> */}
+              <Input
+                // type="password"
+                pr="4.5rem"
+                type={show ? 'text' : 'password'}
+                placeholder="Enter password"
+                name="password"
+                value={password}
+                onChange={handleChange}
+              />
+              <InputRightElement width="4.5rem">
+                <Button h="1.75rem" size="sm" onClick={handleClick}>
+                  {show ? 'Hide' : 'Show'}
+                </Button>
+              </InputRightElement>
+            </InputGroup>
+            <Button w="90px" type="submit">
+              Register
+            </Button>
+          </Stack>
+        </form>
+      </FormControl>
+    </Box>
 
-    <section className={styles.section}>
-      <h2 className={styles.title}>Register form</h2>
-      <form className={styles.regFormWindow} onSubmit={handleSubmit}>
-        <label>
-          Name:<br></br>
-          <input type="text" name="name" value={name} onChange={handleChange} />
-        </label>
-        <label>
-          Email:<br></br>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Password:<br></br>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
-        <br></br>
-        <button type="submit">Register</button>
-      </form>
-    </section>
+    // <section className={styles.section}>
+    //   <h2 className={styles.title}>Register form</h2>
+    //   <form className={styles.regFormWindow} onSubmit={handleSubmit}>
+    //     <label>
+    //       Name:<br></br>
+    //       <input type="text" name="name" value={name} onChange={handleChange} />
+    //     </label>
+    //     <label>
+    //       Email:<br></br>
+    //       <input
+    //         type="email"
+    //         name="email"
+    //         value={email}
+    //         onChange={handleChange}
+    //       />
+    //     </label>
+    //     <label>
+    //       Password:<br></br>
+    //       <input
+    //         type="password"
+    //         name="password"
+    //         value={password}
+    //         onChange={handleChange}
+    //       />
+    //     </label>
+    //     <br></br>
+    //     <button type="submit">Register</button>
+    //   </form>
+    // </section>
   );
 };

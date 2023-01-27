@@ -46,45 +46,49 @@ export const LoginForm = () => {
 
   return (
     <Box p={5} maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
-      <FormControl board={1} w="100%" onSubmit={handleSubmit}>
-        <FormLabel>LOGIN FORM</FormLabel>
-        <Stack spacing={2}>
-          <FormLabel>Email:</FormLabel>
-          <InputGroup>
-            <InputLeftElement
-              pointerEvents="none"
-              children={<AtSignIcon color="gray.300" />}
-            />
-            <Input
-              type="email"
-              name="email"
-              value={email}
-              onChange={handleChange}
-            />
-          </InputGroup>
-          <FormLabel>Password:</FormLabel>
-          <InputGroup>
-            {/* <InputLeftElement
+      <FormControl board={1} w="100%">
+        <form onSubmit={handleSubmit}>
+          <FormLabel>LOGIN FORM</FormLabel>
+          <Stack spacing={2}>
+            <FormLabel>Email:</FormLabel>
+            <InputGroup>
+              <InputLeftElement
+                pointerEvents="none"
+                children={<AtSignIcon color="gray.300" />}
+              />
+              <Input
+                type="email"
+                name="email"
+                value={email}
+                onChange={handleChange}
+              />
+            </InputGroup>
+            <FormLabel>Password:</FormLabel>
+            <InputGroup>
+              {/* <InputLeftElement
               pointerEvents="none"
               children={<EditIcon color="gray.300" />}
             /> */}
-            <Input
-              // type="password"
-              pr="4.5rem"
-              type={show ? 'text' : 'password'}
-              placeholder="Enter password"
-              name="password"
-              value={password}
-              onChange={handleChange}
-            />
-            <InputRightElement width="4.5rem">
-              <Button h="1.75rem" size="sm" onClick={handleClick}>
-                {show ? 'Hide' : 'Show'}
-              </Button>
-            </InputRightElement>
-          </InputGroup>
-          <Button w="90px">Login</Button>
-        </Stack>
+              <Input
+                // type="password"
+                pr="4.5rem"
+                type={show ? 'text' : 'password'}
+                placeholder="Enter password"
+                name="password"
+                value={password}
+                onChange={handleChange}
+              />
+              <InputRightElement width="4.5rem">
+                <Button h="1.75rem" size="sm" onClick={handleClick}>
+                  {show ? 'Hide' : 'Show'}
+                </Button>
+              </InputRightElement>
+            </InputGroup>
+            <Button w="90px" type="submit">
+              Login
+            </Button>
+          </Stack>
+        </form>
       </FormControl>
     </Box>
 
