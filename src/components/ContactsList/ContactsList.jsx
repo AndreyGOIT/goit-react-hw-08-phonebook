@@ -22,10 +22,10 @@ export const ContactsList = () => {
     <section className={styles.section}>
       {contacts.length > 0 ? (
         <ol>
-          {contacts.map(({ id, name, phone }) => {
+          {contacts.map(({ id, name, email }) => {
             return (
               <li key={id}>
-                {name}: {phone}
+                {name}: {email}
                 <button
                   onClick={() => {
                     dispatch(deleteContact(id));

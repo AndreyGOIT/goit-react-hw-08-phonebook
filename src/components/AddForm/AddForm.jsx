@@ -14,36 +14,17 @@ export const Form = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(event.target.name.value);
-    console.log(event.target.email.value);
+    console.log(event.target.elements.name.value);
+    console.log(event.target.elements.email.value);
     dispatch(
       addContact({
-        name: event.target.name.value,
-        email: event.target.email.value,
+        name: event.target.elements.name.value,
+        email: event.target.elements.email.value,
       })
     );
   };
 
   return (
-    // <FormControl
-    //   display="flex"
-    //   alignItems="center"
-    //   width="100%"
-    //   onSubmit={handleSubmit}
-    // >
-    //   <FormLabel>Name:</FormLabel>
-    //   <Input type="text" name="name" placeholder="Enter your name" w="auto" />
-    //   <FormLabel>Email address:</FormLabel>
-    //   <Input
-    //     type="email"
-    //     name="email"
-    //     placeholder="Enter your email"
-    //     w="auto"
-    //   />
-    //   <FormHelperText>We'll never share your email.</FormHelperText>
-    //   <Button type="submit">Save</Button>
-    // </FormControl>
-
     <form onSubmit={handleSubmit}>
       <label>
         Name:
@@ -51,7 +32,7 @@ export const Form = () => {
         {/* <Input type="text" name="name" placeholder="Enter your name" /> */}
         <input type="text" name="name" placeholder="Enter your name" />
       </label>
-      {/* <br /> */}
+      <br />
 
       <label>
         Email:
@@ -64,3 +45,22 @@ export const Form = () => {
     </form>
   );
 };
+
+// <FormControl
+//   display="flex"
+//   alignItems="center"
+//   width="100%"
+//   onSubmit={handleSubmit}
+// >
+//   <FormLabel>Name:</FormLabel>
+//   <Input type="text" name="name" placeholder="Enter your name" w="auto" />
+//   <FormLabel>Email address:</FormLabel>
+//   <Input
+//     type="email"
+//     name="email"
+//     placeholder="Enter your email"
+//     w="auto"
+//   />
+//   <FormHelperText>We'll never share your email.</FormHelperText>
+//   <Button type="submit">Save</Button>
+// </FormControl>
