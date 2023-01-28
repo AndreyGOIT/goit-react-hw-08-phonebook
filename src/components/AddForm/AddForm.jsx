@@ -1,13 +1,5 @@
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/contacts-operations';
-// import {
-//   FormControl,
-//   FormLabel,
-//   Input,
-//   FormHelperText,
-// } from '@chakra-ui/react';
-// import { Button } from '@chakra-ui/react';
-// import { Input } from '@chakra-ui/react';
 
 export const Form = () => {
   const dispatch = useDispatch();
@@ -29,18 +21,14 @@ export const Form = () => {
       <label>
         Name:
         <br />
-        {/* <Input type="text" name="name" placeholder="Enter your name" /> */}
         <input type="text" name="name" placeholder="Enter your name" />
       </label>
       <br />
-
       <label>
         Number:
         <br />
-        {/* <Input type="email" name="email" placeholder="Enter your email" /> */}
         <input type="number" name="number" placeholder="Enter your number" />
       </label>
-      {/* <Button type="submit">Save</Button> */}
       <button type="submit">Save</button>
     </form>
   );

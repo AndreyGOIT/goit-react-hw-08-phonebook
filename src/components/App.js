@@ -9,55 +9,55 @@ import { Layout } from './Layout/Layout';
 import { fetchCurretUser } from 'redux/auth/auth-operations';
 import { PrivateRoute } from 'HOCs/PrivateRoute';
 import { PublicRoute } from 'HOCs/PublicRoute';
-import { selectIsFetchingCurrentUser } from 'redux/auth/auth-selectors';
+// import { selectIsFetchingCurrentUser } from 'redux/auth/auth-selectors';
 
 export const App = () => {
   const dispatch = useDispatch();
-  const isFetchingCurrentUser = useSelector(selectIsFetchingCurrentUser);
+  // const isFetchingCurrentUser = useSelector(selectIsFetchingCurrentUser);
 
   useEffect(() => {
     dispatch(fetchCurretUser());
   }, [dispatch]);
   return (
     <>
-      {!isFetchingCurrentUser && (
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route
-              index
-              element={
-                <PublicRoute>
-                  <HomePage />
-                </PublicRoute>
-              }
-            />
-            <Route
-              path="contacts"
-              element={
-                <PrivateRoute>
-                  <ContactsPage />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="register"
-              element={
-                <PublicRoute restricted>
-                  <RegisterPage />
-                </PublicRoute>
-              }
-            />
-            <Route
-              path="login"
-              element={
-                <PublicRoute restricted>
-                  <LoginPage />
-                </PublicRoute>
-              }
-            />
-          </Route>
-        </Routes>
-      )}
+      {/* {!isFetchingCurrentUser && ( */}
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route
+            index
+            element={
+              <PublicRoute>
+                <HomePage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="contacts"
+            element={
+              <PrivateRoute>
+                <ContactsPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="register"
+            element={
+              <PublicRoute restricted>
+                <RegisterPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <PublicRoute restricted>
+                <LoginPage />
+              </PublicRoute>
+            }
+          />
+        </Route>
+      </Routes>
+      {/* )} */}
     </>
   );
 };

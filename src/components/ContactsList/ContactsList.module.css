@@ -12,11 +12,18 @@ ul {
   list-style-type: none;
 }
 button {
-  margin-left: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 3px 7px;
 }
 .filterBtn {
   border: 1px solid black;
   border-radius: 4px;
   padding: 2px;
   background-color: lightgray;
+}
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
