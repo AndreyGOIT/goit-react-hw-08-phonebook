@@ -43,7 +43,7 @@
 // import { useDispatch, useSelector } from 'react-redux';
 // import { Button } from 'components/Button/Button';
 import { ContactsList } from 'components/ContactsList/ContactsList';
-import { Form } from 'components/AddForm/AddForm';
+import { Form } from 'components/Form/Form';
 import { Filter } from 'components/Filter/Filter';
 // import { fetchContacts } from 'redux/contacts/contacts-operations';
 // import {

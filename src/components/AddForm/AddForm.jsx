@@ -15,11 +15,11 @@ export const Form = () => {
   const handleSubmit = event => {
     event.preventDefault();
     console.log(event.target.elements.name.value);
-    console.log(event.target.elements.email.value);
+    console.log(event.target.elements.number.value);
     dispatch(
       addContact({
         name: event.target.elements.name.value,
-        email: event.target.elements.email.value,
+        number: event.target.elements.number.value,
       })
     );
   };
@@ -35,10 +35,10 @@ export const Form = () => {
       <br />
 
       <label>
-        Email:
+        Number:
         <br />
         {/* <Input type="email" name="email" placeholder="Enter your email" /> */}
-        <input type="email" name="email" placeholder="Enter your email" />
+        <input type="number" name="number" placeholder="Enter your number" />
       </label>
       {/* <Button type="submit">Save</Button> */}
       <button type="submit">Save</button>

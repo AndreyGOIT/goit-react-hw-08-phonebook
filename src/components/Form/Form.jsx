@@ -7,7 +7,7 @@ import { useState } from 'react';
 const nameInputId = nanoid(); //=> "V1StGXR8_Z5jdHi6B-myT"
 const numberInputId = nanoid();
 
-export default function Form() {
+export const Form = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -60,4 +60,4 @@ export default function Form() {
       </form>
     </section>
   );
-}
+};

@@ -40,12 +40,7 @@ export const deleteContact = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       await axios.delete(
-        `https://connections-api.herokuapp.com/contacts/${id}`,
-        {
-          headers: {
-            authorization: 'admin',
-          },
-        }
+        `https://connections-api.herokuapp.com/contacts/${id}`
       );
       return id;
     } catch (error) {
