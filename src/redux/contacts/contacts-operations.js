@@ -51,13 +51,12 @@ export const deleteContact = createAsyncThunk(
 export const updateContact = createAsyncThunk(
   '/contacts/updateContact',
   async (contact, { rejectWithValue }) => {
-    console.log(contact);
+    console.log(contact.name, contact.number);
     console.log(contact.id);
-    const contactId = contact.id;
     try {
       await axios.patch(
-        `https://connections-api.herokuapp.com/contacts/${contactId}`,
-        contact
+        `https://connections-api.herokuapp.com/contacts/${contact.id}`,
+        { name: contact.name, number: contact.number }
       );
 
       return contact;
