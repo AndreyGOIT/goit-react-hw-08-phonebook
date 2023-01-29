@@ -37,7 +37,10 @@ const contactsSlice = createSlice({
         state.contacts.items = [...state.contacts.items, payload];
       })
       .addCase(updateContact.fulfilled, (state, { payload }) => {
-        state.contacts.items = [...state.contacts.items, payload];
+        const index = state.contacts.items.findIndex(
+          item => item.id === payload.id
+        );
+        state.contacts.items[index] = payload;
       })
       .addMatcher(
         isAnyOf(
