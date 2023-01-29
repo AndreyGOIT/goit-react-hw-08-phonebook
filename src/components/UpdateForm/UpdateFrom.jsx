@@ -42,7 +42,7 @@ export const UpdateForm = ({ closeForm, contactToUpdate }) => {
           onChange={handleChange}
         />
       </label>
-      <button>Update</button>
+      <button type="submit">Update</button>
     </form>
   );
 };

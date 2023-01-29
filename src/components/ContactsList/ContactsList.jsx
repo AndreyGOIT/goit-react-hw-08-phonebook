@@ -1,7 +1,7 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectVisibleContacts } from 'redux/contacts/contacts-selectors';
-// import { UpdateForm } from 'components/UpdateForm/UpdateFrom';
+import { UpdateForm } from 'components/UpdateForm/UpdateFrom';
 import styles from './ContactsList.module.css';
 import {
   deleteContact,
@@ -13,18 +13,18 @@ import {
 // import { Button } from '@chakra-ui/react';
 
 export const ContactsList = () => {
-  // const [contactToUpdate, setContactToUpdate] = useState(null);
+  const [contactToUpdate, setContactToUpdate] = useState(null);
   const contacts = useSelector(selectVisibleContacts);
   const dispatch = useDispatch();
 
-  // const showUpdateForm = contactId => {
-  //   const contact = contacts.find(({ id }) => id === contactId);
-  //   setContactToUpdate(contact);
-  // };
+  const showUpdateForm = contactId => {
+    const contact = contacts.find(({ id }) => id === contactId);
+    setContactToUpdate(contact);
+  };
 
-  // const closeForm = () => {
-  //   setContactToUpdate(null);
-  // };
+  const closeForm = () => {
+    setContactToUpdate(null);
+  };
 
   return (
     <section className={styles.section}>
@@ -43,15 +43,15 @@ export const ContactsList = () => {
                   >
                     Delete
                   </button>
-                  {/* <button onClick={() => showUpdateForm(id)}>
+                  <button onClick={() => showUpdateForm(id)}>
                     Update user
-                  </button> */}
-                  {/* {contactToUpdate && contactToUpdate.id === id && (
+                  </button>
+                  {contactToUpdate && contactToUpdate.id === id && (
                     <UpdateForm
                       contactToUpdate={contactToUpdate}
                       closeForm={closeForm}
                     />
-                  )} */}
+                  )}
                 </div>
               </li>
             );
