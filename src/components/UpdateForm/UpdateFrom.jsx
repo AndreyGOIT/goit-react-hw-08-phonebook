@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateContact } from 'redux/contacts/contacts-operations';
+import PropTypes from 'prop-types';
 
 export const UpdateForm = ({ closeForm, contactToUpdate }) => {
   const [name, setName] = useState(contactToUpdate.name);
@@ -45,4 +46,9 @@ export const UpdateForm = ({ closeForm, contactToUpdate }) => {
       <button type="submit">Update</button>
     </form>
   );
+};
+
+UpdateForm.propTypes = {
+  closeForm: PropTypes.func.isRequired,
+  contactToUpdate: PropTypes.object.isRequired,
 };
