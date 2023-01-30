@@ -9,7 +9,7 @@ export const Header = () => {
   const token = useSelector(selectToken);
   return (
     <Box as="header" py={2} bg="lightblue">
-      <Container>
+      <Container maxW="100%">
         <Flex justifyContent="space-between" alignItems="center">
           <Navigation />
           {token ? <UserMenu /> : <AuthNavigation />}
