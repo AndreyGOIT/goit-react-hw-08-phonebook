@@ -1,6 +1,13 @@
 // import { Heading, Box } from '@chakra-ui/react';
 
-import { Container, Box, Heading, Text, Divider } from '@chakra-ui/react';
+import {
+  Container,
+  Box,
+  Heading,
+  Text,
+  Divider,
+  Center,
+} from '@chakra-ui/react';
 
 export const HomePage = () => {
   return (
@@ -9,9 +16,11 @@ export const HomePage = () => {
     // </Box>
     <Container maxW="conatiner.lg">
       <Box py="3">
-        <Heading as="h1" fontSize="25" mb="5">
-          Welcome to Contact Book app
-        </Heading>
+        <Center>
+          <Heading as="h1" fontSize="25" mb="5">
+            Welcome to Contact Book app
+          </Heading>
+        </Center>
         <Divider />
         <Text fontSize="x1" mb="5" py="3">
           You can use the app to create, store and edit contacts, both personal
@@ -19,10 +28,12 @@ export const HomePage = () => {
           or, if you already have an account, log in.
         </Text>
         <Divider />
-        <Text fontSize="17" py="3">
-          Your contact book is available for use 24 hours a day, seven days a
-          week.
-        </Text>
+        <Center>
+          <Text fontSize="17" py="3">
+            Your contact book is available for use 24 hours a day, seven days a
+            week.
+          </Text>
+        </Center>
       </Box>
     </Container>
     // <h1>Hello from Contact`s APP!</h1>

@@ -3,6 +3,7 @@ import { addContact } from 'redux/contacts/contacts-operations';
 import styles from './Form.module.css';
 import { nanoid } from 'nanoid';
 import { useState } from 'react';
+import { PlusSquareIcon } from '@chakra-ui/icons';
 
 const nameInputId = nanoid(); //=> "V1StGXR8_Z5jdHi6B-myT"
 const numberInputId = nanoid();
@@ -32,9 +33,11 @@ export const Form = () => {
   return (
     <section className={styles.section}>
       <form className={styles.phoneBookWindow} onSubmit={handleSubmit}>
+        <h2 className={styles.phoneBookWindow__title}>Add form</h2>
         <label htmlFor={nameInputId}>
           Name<br></br>
           <input
+            className={styles.addFromInput}
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -47,6 +50,7 @@ export const Form = () => {
         <label htmlFor={numberInputId}>
           Number<br></br>
           <input
+            className={styles.addFromInput}
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -56,7 +60,10 @@ export const Form = () => {
             onChange={handleNumberChange}
           />
         </label>
-        <button type="submit">Add contact</button>
+        <br></br>
+        <button type="submit">
+          <PlusSquareIcon /> Add contact
+        </button>
       </form>
     </section>
   );

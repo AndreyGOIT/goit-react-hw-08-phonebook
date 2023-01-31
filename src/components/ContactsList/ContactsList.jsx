@@ -7,6 +7,8 @@ import {
   deleteContact,
   fetchContacts,
 } from 'redux/contacts/contacts-operations';
+import { Avatar } from '@chakra-ui/react';
+import { DeleteIcon, EditIcon } from '@chakra-ui/icons';
 
 // import { useEffect } from 'react';
 // import { DeleteIcon } from '@chakra-ui/icons';
@@ -34,6 +36,7 @@ export const ContactsList = () => {
             return (
               <li key={id}>
                 <div className={styles.listItem}>
+                  <Avatar name={name} />
                   <span>{name}:</span>
                   <span>{number}</span>
                   <button
@@ -41,10 +44,10 @@ export const ContactsList = () => {
                       dispatch(deleteContact(id));
                     }}
                   >
-                    Delete
+                    Delete <DeleteIcon />
                   </button>
                   <button onClick={() => showUpdateForm(id)}>
-                    Update user
+                    Update user <EditIcon />
                   </button>
                   {contactToUpdate && contactToUpdate.id === id && (
                     <UpdateForm
@@ -67,6 +70,7 @@ export const ContactsList = () => {
           >
             Show contacts
           </button>
+
           <p>There is no contacts yet</p>
         </>
       )}
