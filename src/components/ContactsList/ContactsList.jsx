@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectVisibleContacts } from 'redux/contacts/contacts-selectors';
-import { UpdateForm } from 'components/UpdateForm/UpdateFrom';
+// import { UpdateForm } from 'components/UpdateForm/UpdateFrom';
 import styles from './ContactsList.module.css';
 import {
   deleteContact,
@@ -9,6 +9,7 @@ import {
 } from 'redux/contacts/contacts-operations';
 import { Avatar } from '@chakra-ui/react';
 import { DeleteIcon, EditIcon } from '@chakra-ui/icons';
+import { BasicUsage } from 'components/UpdateFormModal/UpdateFormModal';
 
 // import { useEffect } from 'react';
 // import { DeleteIcon } from '@chakra-ui/icons';
@@ -50,10 +51,14 @@ export const ContactsList = () => {
                     Update user <EditIcon />
                   </button>
                   {contactToUpdate && contactToUpdate.id === id && (
-                    <UpdateForm
+                    <BasicUsage
                       contactToUpdate={contactToUpdate}
                       closeForm={closeForm}
                     />
+                    // <UpdateForm
+                    //   contactToUpdate={contactToUpdate}
+                    //   closeForm={closeForm}
+                    // />
                   )}
                 </div>
               </li>

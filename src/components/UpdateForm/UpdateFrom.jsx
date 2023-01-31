@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateContact } from 'redux/contacts/contacts-operations';
 import PropTypes from 'prop-types';
+import styles from './UpdateForm.module.css';
 
 export const UpdateForm = ({ closeForm, contactToUpdate }) => {
   const [name, setName] = useState(contactToUpdate.name);
@@ -29,7 +30,7 @@ export const UpdateForm = ({ closeForm, contactToUpdate }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.updateWindow} onSubmit={handleSubmit}>
       <label>
         Name:
         <input type="text" name="name" value={name} onChange={handleChange} />
