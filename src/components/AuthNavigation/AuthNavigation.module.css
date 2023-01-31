@@ -8,3 +8,6 @@
   gap: 8px;
   list-style-type: none;
 }
+.authNavListItem {
+  font-size: large;
+}
