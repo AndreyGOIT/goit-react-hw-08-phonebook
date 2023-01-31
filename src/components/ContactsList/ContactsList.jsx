@@ -45,7 +45,7 @@ export const ContactsList = () => {
                       dispatch(deleteContact(id));
                     }}
                   >
-                    <DeleteIcon />
+                    <DeleteIcon boxSize={4} />
                   </button>
                   <button onClick={() => showUpdateForm(id)}>
                     Update <EditIcon />
@@ -55,12 +55,9 @@ export const ContactsList = () => {
                       contactToUpdate={contactToUpdate}
                       closeForm={closeForm}
                     />
-                    // <UpdateForm
-                    //   contactToUpdate={contactToUpdate}
-                    //   closeForm={closeForm}
-                    // />
                   )}
                 </div>
+                {/* <hr></hr> */}
               </li>
             );
           })}

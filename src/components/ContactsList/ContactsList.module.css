@@ -8,20 +8,23 @@ section {
   margin-top: 10px;
   margin-bottom: 15px;
 }
-/* .listItem {
+.listItem {
+  padding: 8px;
   border: 1px solid gray;
-} */
+  border-radius: 8px;
+  margin-bottom: 4px;
+}
 button {
   border: 1px solid gray;
   border-radius: 4px;
-  padding: 3px 7px;
+  padding: 5px 9px;
 }
-.filterBtn {
+/* .filterBtn {
   border: 1px solid black;
   border-radius: 4px;
   padding: 2px;
   background-color: lightgray;
-}
+} */
 .listItem {
   display: flex;
   align-items: center;

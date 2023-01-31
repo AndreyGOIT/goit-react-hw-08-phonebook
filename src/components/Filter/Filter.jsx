@@ -10,10 +10,8 @@ export const Filter = () => {
   return (
     <section>
       <label className={styles.filterBlock}>
-        {/* <h2 className={styles.filterTitle}>
-          Find contacts by name: <SearchIcon boxSize={5} />
-        </h2> */}
         <input
+          className={styles.filterInput}
           type="text"
           placeholder="Find contacts by name:"
           onChange={event => dispatch(filterContacts(event.target.value))}
