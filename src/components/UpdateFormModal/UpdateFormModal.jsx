@@ -4,6 +4,7 @@ import {
   ModalContent,
   ModalHeader,
   ModalBody,
+  // ModalCloseButton,
 } from '@chakra-ui/react';
 import { useDisclosure } from '@chakra-ui/react';
 import { UpdateForm } from 'components/UpdateForm/UpdateFrom';
@@ -16,6 +17,7 @@ export const BasicUsage = ({ closeForm, contactToUpdate }) => {
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Contact to update</ModalHeader>
+          {/* <ModalCloseButton /> */}
           <ModalBody>
             <UpdateForm
               contactToUpdate={contactToUpdate}

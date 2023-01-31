@@ -6,7 +6,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 export const Navigation = () => {
   const token = useSelector(selectToken);
   return (
-    <Breadcrumb p="2" fontWeight="medium" fontSize="l">
+    <Breadcrumb p="2" fontWeight="medium" fontSize="xl">
       <BreadcrumbItem>
         <BreadcrumbLink as={Link} to="/">
           Home
@@ -20,17 +20,5 @@ export const Navigation = () => {
         </BreadcrumbItem>
       )}
     </Breadcrumb>
-    // <nav>
-    //   <ul>
-    //     <li>
-    //       <NavLink to="/">Home</NavLink>
-    //     </li>
-    //     {token && (
-    //       <li>
-    //         <NavLink to="contacts">Contacts</NavLink>
-    //       </li>
-    //     )}
-    //   </ul>
-    // </nav>
   );
 };

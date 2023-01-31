@@ -4,3 +4,9 @@
   gap: 10px;
   padding-bottom: 10px;
 }
+.updateFormBtn {
+  background-color: lightblue;
+}
+.updateFormBtn:hover {
+  background-color: rgb(95, 166, 189);
+}

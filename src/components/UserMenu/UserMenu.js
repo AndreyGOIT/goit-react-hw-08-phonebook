@@ -17,7 +17,7 @@ export const UserMenu = () => {
     //   </Flex>
     // </Box>
     <div className={styles.userMenuBlock}>
-      <span>{`Welcome, ${name}`}</span>
+      <h3 className={styles.userMenuTitel}>{`Welcome, ${name}`}</h3>
       <button className={styles.userMenuBtn} onClick={() => dispatch(logout())}>
         Logout
       </button>

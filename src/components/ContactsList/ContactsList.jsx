@@ -41,14 +41,18 @@ export const ContactsList = () => {
                   <span className={styles.nameField}>{name}</span>
                   <span className={styles.numberField}>{number}</span>
                   <button
+                    className={styles.delBtn}
                     onClick={() => {
                       dispatch(deleteContact(id));
                     }}
                   >
                     <DeleteIcon boxSize={4} />
                   </button>
-                  <button onClick={() => showUpdateForm(id)}>
-                    Update <EditIcon />
+                  <button
+                    className={styles.updateBtn}
+                    onClick={() => showUpdateForm(id)}
+                  >
+                    Update <EditIcon boxSize={5} />
                   </button>
                   {contactToUpdate && contactToUpdate.id === id && (
                     <BasicUsage
@@ -57,13 +61,12 @@ export const ContactsList = () => {
                     />
                   )}
                 </div>
-                {/* <hr></hr> */}
               </li>
             );
           })}
         </ol>
       ) : (
-        <>
+        <div className={styles.showContactsBlock}>
           <button
             className={styles.filterBtn}
             onClick={() => {
@@ -72,9 +75,8 @@ export const ContactsList = () => {
           >
             Show contacts
           </button>
-
           <p>There is no contacts yet</p>
-        </>
+        </div>
       )}
     </section>
   );

@@ -98,6 +98,7 @@ export const LoginForm = () => {
         <label>
           Email:<br></br>
           <input
+            className={styles.loginInput}
             type="email"
             name="email"
             value={email}
@@ -107,6 +108,7 @@ export const LoginForm = () => {
         <label>
           Password:<br></br>
           <input
+            className={styles.loginInput}
             type="password"
             name="password"
             value={password}

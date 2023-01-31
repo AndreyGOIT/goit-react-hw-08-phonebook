@@ -1,5 +1,5 @@
 section {
-  padding-left: 20px;
+  padding-left: 0px;
 }
 .sectionTitle {
   display: inline-flex;
@@ -10,21 +10,33 @@ section {
 }
 .listItem {
   padding: 8px;
-  border: 1px solid gray;
+  border: 2px solid lightblue;
   border-radius: 8px;
   margin-bottom: 4px;
 }
-button {
+.delBtn {
   border: 1px solid gray;
   border-radius: 4px;
-  padding: 5px 9px;
+  width: 30px;
+  height: 30px;
 }
-/* .filterBtn {
+.delBtn:hover {
+  background-color: lightblue;
+}
+.updateBtn:hover {
+  color: lightblue;
+  background-color: unset;
+}
+
+.filterBtn {
   border: 1px solid black;
   border-radius: 4px;
-  padding: 2px;
-  background-color: lightgray;
-} */
+  padding: 2px 9px;
+  background-color: lightblue;
+}
+.filterBtn:hover {
+  background-color: rgb(100, 151, 205);
+}
 .listItem {
   display: flex;
   align-items: center;
@@ -35,4 +47,10 @@ button {
 }
 .numberField {
   width: 100px;
+}
+.showContactsBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }

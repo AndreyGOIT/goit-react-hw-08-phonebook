@@ -33,7 +33,6 @@ export const Form = () => {
   return (
     <section className={styles.section}>
       <form className={styles.phoneBookWindow} onSubmit={handleSubmit}>
-        {/* <h2 className={styles.phoneBookWindow__title}>Add form</h2> */}
         <label htmlFor={nameInputId}>
           Name<br></br>
           <input
@@ -61,7 +60,7 @@ export const Form = () => {
           />
         </label>
         <br></br>
-        <button type="submit">
+        <button className={styles.addContactButton} type="submit">
           <PlusSquareIcon /> Add contact
         </button>
       </form>

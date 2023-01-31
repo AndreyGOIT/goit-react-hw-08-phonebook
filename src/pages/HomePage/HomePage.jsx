@@ -15,7 +15,7 @@ export const HomePage = () => {
       <Container p="10px" maxW="conatiner.lg">
         <Box as="section" py="3">
           <Center>
-            <Heading as="h1" fontSize="25" mb="5">
+            <Heading as="h1" fontSize="35" mb="5">
               Welcome to Contact Book app
             </Heading>
           </Center>

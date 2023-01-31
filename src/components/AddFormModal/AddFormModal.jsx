@@ -14,7 +14,7 @@ export const AddFormModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Button size="sm" mb="0" onClick={onOpen}>
+      <Button size="sm" mb="0" bg="lightblue" onClick={onOpen}>
         +
       </Button>
 

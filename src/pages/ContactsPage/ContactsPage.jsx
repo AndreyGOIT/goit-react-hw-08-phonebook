@@ -1,22 +1,19 @@
 import { ContactsList } from 'components/ContactsList/ContactsList';
-// import { Form } from 'components/Form/Form';
 import { Filter } from 'components/Filter/Filter';
-import { Flex, Container, VStack, StackDivider, Box } from '@chakra-ui/react';
+import { Divider, Flex, Container, VStack, Box } from '@chakra-ui/react';
 import { AddFormModal } from '../../components/AddFormModal/AddFormModal';
 
 export const ContactsPage = () => {
   return (
     <Container p={3}>
-      <VStack spacing="5" divider={<StackDivider borderColor="gray" />}>
-        {/* <Box>
-          <Form />
-        </Box> */}
+      <VStack spacing="5">
         <Box>
           <Flex justify="center" align="center" gap="10px">
             <Filter />
             <AddFormModal />
           </Flex>
         </Box>
+        <Divider borderWidth="2px" borderColor="blue.100" />
         <Box>
           <ContactsList />
         </Box>

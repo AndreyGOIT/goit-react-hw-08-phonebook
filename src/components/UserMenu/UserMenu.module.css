@@ -1,11 +1,17 @@
 .userMenuBlock {
   display: flex;
   align-items: center;
-  gap: 5px;
-  justify-content: center;
+  gap: 15px;
+  justify-content: space-between;
 }
 .userMenuBtn {
-  border: 1px solid rgb(80, 77, 77);
+  border: 1px solid rgb(77, 79, 80);
   border-radius: 4px;
   padding: 4px;
+}
+.userMenuBtn:hover {
+  background-color: rgb(100, 151, 205);
+}
+.userMenuTitel {
+  font-size: x-large;
 }
