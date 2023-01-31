@@ -37,18 +37,18 @@ export const ContactsList = () => {
             return (
               <li key={id}>
                 <div className={styles.listItem}>
-                  <Avatar name={name} />
-                  <span>{name}:</span>
-                  <span>{number}</span>
+                  <Avatar size="sm" name={name} />
+                  <span className={styles.nameField}>{name}</span>
+                  <span className={styles.numberField}>{number}</span>
                   <button
                     onClick={() => {
                       dispatch(deleteContact(id));
                     }}
                   >
-                    Delete <DeleteIcon />
+                    <DeleteIcon />
                   </button>
                   <button onClick={() => showUpdateForm(id)}>
-                    Update user <EditIcon />
+                    Update <EditIcon />
                   </button>
                   {contactToUpdate && contactToUpdate.id === id && (
                     <BasicUsage

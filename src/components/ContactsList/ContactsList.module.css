@@ -8,9 +8,9 @@ section {
   margin-top: 10px;
   margin-bottom: 15px;
 }
-ul {
-  list-style-type: none;
-}
+/* .listItem {
+  border: 1px solid gray;
+} */
 button {
   border: 1px solid gray;
   border-radius: 4px;
@@ -26,4 +26,10 @@ button {
   display: flex;
   align-items: center;
   gap: 15px;
+}
+.nameField {
+  width: 150px;
+}
+.numberField {
+  width: 100px;
 }
