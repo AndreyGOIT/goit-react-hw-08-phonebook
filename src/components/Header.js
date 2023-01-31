@@ -10,7 +10,7 @@ export const Header = () => {
   return (
     <Box as="header" py={2} bg="lightblue">
       <Container py={4} h="80px" maxW="100%">
-        <Flex justifyContent="space-between" alignItems="center">
+        <Flex justifyContent="space-between" alignItems="center" px={6}>
           <Navigation />
           {token ? <UserMenu /> : <AuthNavigation />}
         </Flex>
