@@ -11,7 +11,6 @@ export const fetchContacts = createAsyncThunk(
       const { data } = await axios(
         'https://connections-api.herokuapp.com/contacts'
       );
-      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error);
@@ -27,7 +26,6 @@ export const addContact = createAsyncThunk(
         `https://connections-api.herokuapp.com/contacts`,
         contact
       );
-      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error);
@@ -51,8 +49,6 @@ export const deleteContact = createAsyncThunk(
 export const updateContact = createAsyncThunk(
   '/contacts/updateContact',
   async (contact, { rejectWithValue }) => {
-    console.log(contact.name, contact.number);
-    console.log(contact.id);
     try {
       await axios.patch(
         `https://connections-api.herokuapp.com/contacts/${contact.id}`,
