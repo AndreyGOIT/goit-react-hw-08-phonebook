@@ -1,4 +1,6 @@
 .section {
+  display: flex;
+  justify-content: center;
   padding: 20px;
   /* padding-left: 20px; */
 }
@@ -9,6 +11,7 @@
   padding: 20px;
   width: 300px;
   border: 1px solid black;
+  border-radius: 4px;
 }
 input {
   width: 250px;

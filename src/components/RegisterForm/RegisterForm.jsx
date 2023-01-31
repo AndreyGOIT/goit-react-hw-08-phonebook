@@ -111,7 +111,7 @@ export const RegisterForm = () => {
     // </Box>
 
     <section className={styles.section}>
-      <h2 className={styles.title}>Register form</h2>
+      {/* <h2 className={styles.title}>Register form</h2> */}
       <form className={styles.regFormWindow} onSubmit={handleSubmit}>
         <label>
           Name:<br></br>

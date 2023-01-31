@@ -1,5 +1,3 @@
-// import { Heading, Box } from '@chakra-ui/react';
-
 import {
   Container,
   Box,
@@ -13,9 +11,6 @@ import { CollapseEx } from '../../components/CollapseTransition/CollapseTransiti
 
 export const HomePage = () => {
   return (
-    // <Box display="flex" justifyContent="center">
-    //   <Heading p="10px">Hello from Contact`s APP!</Heading>
-    // </Box>
     <Flex height="600" justify="center" align="center">
       <Container p="10px" maxW="conatiner.lg">
         <Box as="section" py="3">
@@ -25,12 +20,6 @@ export const HomePage = () => {
             </Heading>
           </Center>
           <Divider />
-          {/* <Text fontSize="x1" mb="5" py="3">
-          You can use the app to create, store and edit contacts, both personal
-          and work. To access the features of the application, please register
-          or, if you already have an account, log in.
-        </Text>
-        <Divider /> */}
           <Center>
             <Text fontSize="17" py="3">
               Your contact book is available for use 24 hours a day, seven days
@@ -43,6 +32,5 @@ export const HomePage = () => {
         </Box>
       </Container>
     </Flex>
-    // <h1>Hello from Contact`s APP!</h1>
   );
 };

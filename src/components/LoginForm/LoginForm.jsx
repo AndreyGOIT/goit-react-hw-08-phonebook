@@ -93,7 +93,7 @@ export const LoginForm = () => {
     // </Box>
 
     <section className={styles.section}>
-      <b>Login</b>
+      {/* <b>Login</b> */}
       <form className={styles.loginFormWindow} onSubmit={handleSubmit}>
         <label>
           Email:<br></br>
@@ -113,7 +113,7 @@ export const LoginForm = () => {
             onChange={handleChange}
           />
         </label>
-        <button>Login</button>
+        <button className={styles.loginBtn}>Login</button>
       </form>
     </section>
   );
