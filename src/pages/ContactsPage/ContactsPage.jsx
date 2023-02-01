@@ -6,6 +6,7 @@ import { AddFormModal } from '../../components/AddFormModal/AddFormModal';
 export const ContactsPage = () => {
   return (
     <Container maxW="container.lg" py={6}>
+      {/* // <Container size="full" py={6}> */}
       <VStack spacing="5">
         <Box>
           <Flex justify="center" align="center" gap="10px">
