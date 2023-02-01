@@ -8,14 +8,15 @@ import {
   Button,
 } from '@chakra-ui/react';
 import { useDisclosure } from '@chakra-ui/react';
+import { AddIcon } from '@chakra-ui/icons';
 import { Form } from 'components/Form/Form';
 
 export const AddFormModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Button size="sm" mb="0" bg="lightblue" onClick={onOpen}>
-        +
+      <Button size="md" mb="0" bg="lightblue" onClick={onOpen}>
+        <AddIcon boxSize={3} />
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>

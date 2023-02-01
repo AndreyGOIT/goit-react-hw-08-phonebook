@@ -2,7 +2,7 @@ section {
   padding-left: 20px;
 }
 .sectionTitle {
-  display: inline-flex;
+  display: flex;
   font-size: large;
   font-weight: bold;
   margin-top: 10px;
@@ -19,6 +19,10 @@ section {
   margin-top: 3px;
 }
 .addContactButton {
+  padding: 10px;
   margin-bottom: 10px;
   background-color: lightblue;
+}
+.addContactButton:hover {
+  background-color: rgb(96, 147, 243);
 }

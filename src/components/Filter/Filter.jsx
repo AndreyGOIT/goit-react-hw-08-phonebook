@@ -8,7 +8,7 @@ export const Filter = () => {
   const dispatch = useDispatch();
 
   return (
-    <section>
+    <section className={styles.filterSection}>
       <label className={styles.filterBlock}>
         <input
           className={styles.filterInput}

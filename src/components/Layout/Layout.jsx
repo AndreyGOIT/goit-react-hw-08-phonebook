@@ -1,25 +1,18 @@
-// import { useSelector } from 'react-redux';
-// import { selectToken } from 'redux/auth/auth-selectors';
-// import { Navigation } from 'components/Navigation/Navigation';
-// import { AuthNavigation } from 'components/AuthNavigation/AuthNavigation';
-// import { UserMenu } from 'components/UserMenu/UserMenu';
 import { Outlet } from 'react-router';
-// import styles from './Layout.module.css';
-// import { Box } from '@chakra-ui/react';
 import { Header } from 'components/Header';
+import { Footer } from 'components/Footer';
+import styles from './Layout.module.css';
 
 export const Layout = () => {
-  // const token = useSelector(selectToken);
   return (
     <>
-      <Header />
-      {/* <header className={styles.header}>
-        <Navigation />
-        {token ? <UserMenu /> : <AuthNavigation />}
-      </header> */}
+      <Header as="header" />
       <main>
         <Outlet />
       </main>
+      <footer className={styles.footer}>
+        <Footer as="footer" />
+      </footer>
     </>
   );
 };

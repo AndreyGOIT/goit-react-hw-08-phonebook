@@ -1,6 +1,8 @@
 .filterInput {
   border: 3px solid lightblue;
-  width: 250px;
-  height: 33px;
-  padding-left: 8px;
+  width: 300px;
+  height: 41px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }

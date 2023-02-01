@@ -33,11 +33,18 @@ export const UpdateForm = ({ closeForm, contactToUpdate }) => {
     <form className={styles.updateWindow} onSubmit={handleSubmit}>
       <label>
         Name:
-        <input type="text" name="name" value={name} onChange={handleChange} />
+        <input
+          className={styles.updateFormInput}
+          type="text"
+          name="name"
+          value={name}
+          onChange={handleChange}
+        />
       </label>
       <label>
         Number:
         <input
+          className={styles.updateFormInput}
           type="number"
           name="number"
           value={number}

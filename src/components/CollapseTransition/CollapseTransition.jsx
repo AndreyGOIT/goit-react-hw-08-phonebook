@@ -1,6 +1,6 @@
 import { Button, Slide, Box, Text, Center } from '@chakra-ui/react';
 import { useDisclosure } from '@chakra-ui/react';
-import { InfoIcon } from '@chakra-ui/icons';
+import { InfoOutlineIcon } from '@chakra-ui/icons';
 
 export const CollapseEx = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -8,7 +8,7 @@ export const CollapseEx = () => {
   return (
     <>
       <Button bg="lightblue" onClick={onToggle}>
-        <InfoIcon />
+        <InfoOutlineIcon boxSize={5} />
       </Button>
       <Slide direction="bottom" in={isOpen} style={{ zIndex: 10 }}>
         <Box p="10px" color="white" mt="4" bg="teal" rounded="md" shadow="md">
